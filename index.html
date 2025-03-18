@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-text-container">
+        <span id="navbar-user-text">Hi</span>
+        <span id="navbar-greetings-text">Good Morning</span>
+      </div>
+      <div class="search-bar-group">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          id="location-query"
+          class="nav-bar-search-box"
+          type="search"
+          placeholder="Search Location"
+          name="searchbar"
+        />
+      </div>
+      <label class="mode-toggle-group">
+        <input type="checkbox" class="mode-toggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+    <main>
+      <div class="container">
+        <div class="left-side-container">
+          <div class="current-location-grid-box">
+            <div class="current-location-upper-grid-box">
+              <div class="location-details">
+                <i class="fa-solid fa-location-dot"></i>
+                <span id="location-details-text">Current Location</span>
+              </div>
+              <select>
+                <option>Celsius</option>
+                <option>Farhenheit</option>
+              </select>
+            </div>
+            <div class="current-location-lower-grid-box">
+              <div class="left-time-detail-box">
+                <span id="day-details">Sunday</span>
+                <span id="date-details">Example Date</span>
+                <span id="time-details">Live Time will be Set</span>
+              </div>
+              <div class="middle-atmosphere-icon-box">
+                <img id="current-location-atmosphere-icon" />
+              </div>
+              <div class="left-current-location-grid-box">
+                <div class="current-location-temperature-details">
+                  <span id="current-temperature">Current Temp</span>
+                  <span id="expected-temperature">/Expected Temp</span>
+                </div>
+                <div class="current-location-weather-details">
+                  <span id="current-location-atmosphere-details"></span>
+                  <span id="current-location-expected-details"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="other-cities-grid-box">
+            <div class="upper-bar">
+              <span class="bar-title" id="other-cities-title"
+                >Other Countries in India</span
+              >
+              <select>
+                <!-- Make your Custom Dropdowns-->
+                <option>Country 1</option>
+                <option>Country 2</option>
+              </select>
+            </div>
+            <div class="lower-container">
+              <!-- Add Elements of Countries through Java Script-->
+              <!-- Use Country API and It is Vertically Scrollable-->
+              <!-- Also When Clicked on a city it showcases the weather details of that particular city-->
+            </div>
+          </div>
+        </div>
+        <div class="right-side-container">
+          <div class="highlights-container">
+            <div class="upper-highlights-container">
+              <div class="title-highlishts">
+                <span id="title-text">Today's Hyderabad Highlights</span>
+              </div>
+              <div class="fun-highlights">
+                <span id="fun-title-text"
+                  >Fun Comment to Be Randomly Selected</span
+                >
+              </div>
+            </div>
+            <div class="lower-highlights-container">
+              <div
+                id="lower-left-highlights-container"
+                class="lower-containers"
+              >
+                <div id="wind-status-box" class="highlights-boxes">
+                  <div
+                    id="wind-status-title-box"
+                    class="highlights-title-boxes"
+                  >
+                    <i class="fa-solid fa-wind"></i>
+                    <span class="title-texts" id="wind-status-title-text"
+                      >Wind Status</span
+                    >
+                  </div>
+                  <div
+                    id="wind-status-details-box"
+                    class="highlights-details-box"
+                  >
+                    <span class="main-detail-texts" id="wind-status-main-detail"
+                      >Number</span
+                    >
+                    <span class="side-detail-texts" id="wind-status-side-detail"
+                      >km/h</span
+                    >
+                  </div>
+                  <span
+                    class="highlights-extra-details-box"
+                    id="wind-extra-details"
+                    >Time Given</span
+                  >
+                </div>
+                <div id="air-quality-box" class="highlights-boxes">
+                  <div
+                    id="air-quality-title-box"
+                    class="highlights-title-boxes"
+                  >
+                    <!--Icons to Add through Javascript According to Air Quality-->
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <span class="title-texts" id="air-quality-title-text"
+                      >Air Quality Index</span
+                    >
+                  </div>
+                  <div
+                    id="air-quality-details-box"
+                    class="highlights-details-box"
+                  >
+                    <span class="main-detail-texts" id="air-quality-main-detail"
+                      >Number</span
+                    >
+                    <span class="side-detail-texts" id="air-quality-side-detail"
+                      >km/h</span
+                    >
+                  </div>
+                  <!-- This will change according to quality-->
+                  <span
+                    class="highlights-extra-details-box"
+                    id="air-quality-extra-details"
+                    >Air Quality is Dangerous</span
+                  >
+                </div>
+              </div>
+              <div
+                id="lower-middle-highlights-container"
+                class="lower-containers"
+              >
+                <div id="humidity-box" class="highlights-boxes">
+                  <div id="humidity-title-box" class="highlights-title-boxes">
+                    <i class="fa-solid fa-droplet"></i>
+                    <span class="title-texts" id="humidity-title-text"
+                      >Humidity</span
+                    >
+                  </div>
+                  <div id="humidity-details-box" class="highlights-details-box">
+                    <span class="main-detail-texts" id="humidity-main-detail"
+                      >Number</span
+                    >
+                    <span class="side-detail-texts" id="humidity-side-detail"
+                      >km/h</span
+                    >
+                  </div>
+                  <!-- This will Change According to the Quality-->
+                  <span
+                    class="highlights-extra-details-box"
+                    id="humidity-details"
+                    >Humidity Status</span
+                  >
+                </div>
+                <div id="visibility-box" class="highlights-boxes">
+                  <div id="visibility-title-box" class="highlights-title-boxes">
+                    <i class="fa-solid fa-eye"></i>
+                    <span class="title-texts" id="visibility-title-text"
+                      >Visibility</span
+                    >
+                  </div>
+                  <div
+                    id="visibility-details-box"
+                    class="highlights-details-box"
+                  >
+                    <span class="main-detail-texts" id="visibility-main-detail"
+                      >Number</span
+                    >
+                    <span class="side-detail-texts" id="visibility-side-detail"
+                      >km/h</span
+                    >
+                  </div>
+                  <span
+                    class="highlights-extra-details-box"
+                    id="visibility-details"
+                    >Visibility Details</span
+                  >
+                </div>
+              </div>
+              <div
+                id="lower-right-highlights-container"
+                class="lower-containers"
+              >
+                <div id="sunrise-box" class="highlights-boxes">
+                  <img src="#" id="sunrise-logo" class="sun-logos" />
+                  <div class="sun-details" id="sunrise-details">
+                    <span id="sunrise-title" class="sun-details-titles"
+                      >Sunrise</span
+                    >
+                    <span id="sunrise-time" class="sun-details-time"
+                      >4:50 am</span
+                    >
+                  </div>
+                </div>
+                <div id="sunset-box" class="highlights-boxes">
+                  <img src="#" id="sunset-logo" class="sun-logos" />
+                  <div class="sun-details" id="sunset-details">
+                    <span id="sunset-title" class="sun-details-titles"
+                      >Sunrise</span
+                    >
+                    <span id="sunset-time" class="sun-details-time"
+                      >4:50 am</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="forecast-container">
+            <div class="upper-details-container">
+              <span id="forecast-title">10 Day Forecast</span>
+              <select>
+                <!-- Create Custom Dropdown-->
+                <option>Option 1</option>
+                <option>Option 2</option>
+              </select>
+            </div>
+            <div class="lower-forecast-details-container"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
