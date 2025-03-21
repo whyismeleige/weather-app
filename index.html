@@ -13,7 +13,7 @@
   <body>
     <div class="navbar">
       <div class="navbar-text-container">
-        <span id="navbar-user-text">Hi</span>
+        <span id="navbar-user-text">Hi, Kajal</span>
         <span id="navbar-greetings-text">Good Morning</span>
       </div>
       <div class="search-bar-group">
@@ -34,48 +34,50 @@
     <main>
       <div class="container">
         <div class="left-side-container">
-          <div class="current-location-grid-box">
+          <div id="current-location-grid-box" class="containers">
             <div class="current-location-upper-grid-box">
               <div class="location-details">
-                <i class="fa-solid fa-location-dot"></i>
-                <span id="location-details-text">Current Location</span>
+                <i class="fa-solid fa-location-dot" id="location-icon"></i>
+                <span id="location-details-text">Hyderabad, India</span>
               </div>
-              <select>
-                <option>Celsius</option>
-                <option>Farhenheit</option>
-              </select>
+              <div class="temperature-dropdown">
+                <button class="temp-dropdown-btn">&deg;C <i class="fa-solid fa-caret-down" id="dropdown-icon"></i></button>
+                <div class="temp-dropdown-content">
+                  <div class="temp-dropdown-item" data-value="c">&deg;C </div>
+                  <div class="temp-dropdown-item" data-value="f">&deg;F  </div>
+                </div>
+              </div>
             </div>
             <div class="current-location-lower-grid-box">
               <div class="left-time-detail-box">
                 <span id="day-details">Sunday</span>
-                <span id="date-details">Example Date</span>
-                <span id="time-details">Live Time will be Set</span>
+                <span id="date-details">04 Aug, 2024</span>
+                <span id="time-details">12:34 am</span>
               </div>
               <div class="middle-atmosphere-icon-box">
-                <img id="current-location-atmosphere-icon" />
               </div>
               <div class="left-current-location-grid-box">
                 <div class="current-location-temperature-details">
-                  <span id="current-temperature">Current Temp</span>
-                  <span id="expected-temperature">/Expected Temp</span>
+                  <span id="current-temperature">0&deg;C</span>
+                  <span id="expected-temperature">/24&deg;C</span>
                 </div>
                 <div class="current-location-weather-details">
-                  <span id="current-location-atmosphere-details"></span>
-                  <span id="current-location-expected-details"></span>
+                  <span id="current-location-atmosphere-details">Heavy Rain</span>
+                  <span id="current-location-expected-details">Feels like 31&deg;</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="other-cities-grid-box">
-            <div class="upper-bar">
+          <div id="other-cities-grid-box" class="containers">
+            <div class="upper-bar" id="other-cities-upper-bar">
               <span class="bar-title" id="other-cities-title"
                 >Other Countries in India</span
               >
-              <select>
-                <!-- Make your Custom Dropdowns-->
-                <option>Country 1</option>
-                <option>Country 2</option>
-              </select>
+              <div class="country-dropdown">
+                <button class="country-dropdown-btn">See All <i class="fa-solid fa-caret-down" id="dropdown-icon"></i></button>
+                <div class="country-dropdown-content">
+                </div>
+              </div>
             </div>
             <div class="lower-container">
               <!-- Add Elements of Countries through Java Script-->
@@ -85,15 +87,10 @@
           </div>
         </div>
         <div class="right-side-container">
-          <div class="highlights-container">
-            <div class="upper-highlights-container">
+          <div id="highlights-container" class="containers">
+            <div class="upper-bar" id="highlights-upper-bar">
               <div class="title-highlishts">
-                <span id="title-text">Today's Hyderabad Highlights</span>
-              </div>
-              <div class="fun-highlights">
-                <span id="fun-title-text"
-                  >Fun Comment to Be Randomly Selected</span
-                >
+                <span id="title-text" class="bar-title">Today's Hyderabad Highlights</span>
               </div>
             </div>
             <div class="lower-highlights-container">
@@ -116,7 +113,7 @@
                     class="highlights-details-box"
                   >
                     <span class="main-detail-texts" id="wind-status-main-detail"
-                      >Number</span
+                      >7.90</span
                     >
                     <span class="side-detail-texts" id="wind-status-side-detail"
                       >km/h</span
@@ -125,7 +122,7 @@
                   <span
                     class="highlights-extra-details-box"
                     id="wind-extra-details"
-                    >Time Given</span
+                    >9:00 AM</span
                   >
                 </div>
                 <div id="air-quality-box" class="highlights-boxes">
@@ -134,7 +131,6 @@
                     class="highlights-title-boxes"
                   >
                     <!--Icons to Add through Javascript According to Air Quality-->
-                    <i class="fa-solid fa-triangle-exclamation"></i>
                     <i class="fa-solid fa-thumbs-up"></i>
                     <span class="title-texts" id="air-quality-title-text"
                       >Air Quality Index</span
@@ -145,17 +141,17 @@
                     class="highlights-details-box"
                   >
                     <span class="main-detail-texts" id="air-quality-main-detail"
-                      >Number</span
+                      >89</span
                     >
                     <span class="side-detail-texts" id="air-quality-side-detail"
-                      >km/h</span
+                      >AQI</span
                     >
                   </div>
                   <!-- This will change according to quality-->
                   <span
                     class="highlights-extra-details-box"
                     id="air-quality-extra-details"
-                    >Air Quality is Dangerous</span
+                    >Air Quality is Moderate</span
                   >
                 </div>
               </div>
@@ -172,17 +168,17 @@
                   </div>
                   <div id="humidity-details-box" class="highlights-details-box">
                     <span class="main-detail-texts" id="humidity-main-detail"
-                      >Number</span
+                      >85</span
                     >
                     <span class="side-detail-texts" id="humidity-side-detail"
-                      >km/h</span
+                      >%</span
                     >
                   </div>
                   <!-- This will Change According to the Quality-->
                   <span
                     class="highlights-extra-details-box"
                     id="humidity-details"
-                    >Humidity Status</span
+                    >Humidity is good</span
                   >
                 </div>
                 <div id="visibility-box" class="highlights-boxes">
@@ -197,16 +193,16 @@
                     class="highlights-details-box"
                   >
                     <span class="main-detail-texts" id="visibility-main-detail"
-                      >Number</span
+                      >5</span
                     >
                     <span class="side-detail-texts" id="visibility-side-detail"
-                      >km/h</span
+                      >km</span
                     >
                   </div>
                   <span
                     class="highlights-extra-details-box"
                     id="visibility-details"
-                    >Visibility Details</span
+                    >9:00 AM</span
                   >
                 </div>
               </div>
@@ -215,7 +211,7 @@
                 class="lower-containers"
               >
                 <div id="sunrise-box" class="highlights-boxes">
-                  <img src="#" id="sunrise-logo" class="sun-logos" />
+                  <img id="sunrise-logo" class="sun-logos" src="Icons/Sunrise Icon.png">
                   <div class="sun-details" id="sunrise-details">
                     <span id="sunrise-title" class="sun-details-titles"
                       >Sunrise</span
@@ -226,7 +222,7 @@
                   </div>
                 </div>
                 <div id="sunset-box" class="highlights-boxes">
-                  <img src="#" id="sunset-logo" class="sun-logos" />
+                  <img id="sunset-logo" class="sun-logos" >
                   <div class="sun-details" id="sunset-details">
                     <span id="sunset-title" class="sun-details-titles"
                       >Sunrise</span
@@ -239,9 +235,9 @@
               </div>
             </div>
           </div>
-          <div class="forecast-container">
-            <div class="upper-details-container">
-              <span id="forecast-title">10 Day Forecast</span>
+          <div id="forecast-container" class="containers">
+            <div class="upper-bar" id="forecast-upper-bar">
+              <span id="forecast-title" class="bar-title">10 Day Forecast</span>
               <select>
                 <!-- Create Custom Dropdown-->
                 <option>Option 1</option>
@@ -253,6 +249,7 @@
         </div>
       </div>
     </main>
+    <script src="country-codes.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
