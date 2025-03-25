@@ -71,7 +71,7 @@
           <div id="other-cities-grid-box" class="containers">
             <div class="upper-bar" id="other-cities-upper-bar">
               <span class="bar-title" id="other-cities-title"
-                >Other Countries in India</span
+                >Other Cities in India</span
               >
               <div class="country-dropdown">
                 <button class="country-dropdown-btn">See All <i class="fa-solid fa-caret-down" id="dropdown-icon"></i></button>
@@ -80,9 +80,18 @@
               </div>
             </div>
             <div class="lower-container">
-              <!-- Add Elements of Countries through Java Script-->
-              <!-- Use Country API and It is Vertically Scrollable-->
-              <!-- Also When Clicked on a city it showcases the weather details of that particular city-->
+              <div class="cities-widgets">
+                <div class="cities-details">
+                  <span class="country-name">Australia</span>
+                  <span class="city-name">Canberra</span>
+                  <span class="weather-detail">Sunny</span>
+                </div>
+                <img class="city-atmosphere" src="Icons/DayIcons/Blizzard.png">
+                <div class="city-temperature">
+                  <span class="city-current-temperature-detail">32&deg;</span>
+                  <span class="city-min-temperature-detail">/24&deg;</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -125,33 +134,32 @@
                     >9:00 AM</span
                   >
                 </div>
-                <div id="air-quality-box" class="highlights-boxes">
+                <div id="uv-index-box" class="highlights-boxes">
                   <div
-                    id="air-quality-title-box"
+                    id="uv-index-title-box"
                     class="highlights-title-boxes"
                   >
-                    <!--Icons to Add through Javascript According to Air Quality-->
-                    <i class="fa-solid fa-thumbs-up"></i>
-                    <span class="title-texts" id="air-quality-title-text"
-                      >Air Quality Index</span
+                    <i class="fa-regular fa-sun"></i>
+                    <span class="title-texts" id="uv-index-title-text"
+                      >UV Index</span
                     >
                   </div>
                   <div
-                    id="air-quality-details-box"
+                    id="uv-index-details-box"
                     class="highlights-details-box"
                   >
-                    <span class="main-detail-texts" id="air-quality-main-detail"
-                      >89</span
+                    <span class="main-detail-texts" id="uv-index-main-detail"
+                      >5</span
                     >
-                    <span class="side-detail-texts" id="air-quality-side-detail"
-                      >AQI</span
+                    <span class="side-detail-texts" id="uv-index-side-detail"
+                      >UV</span
                     >
                   </div>
                   <!-- This will change according to quality-->
                   <span
                     class="highlights-extra-details-box"
-                    id="air-quality-extra-details"
-                    >Air Quality is Moderate</span
+                    id="uv-index-extra-details"
+                    >Moderate UV</span
                   >
                 </div>
               </div>
@@ -210,8 +218,8 @@
                 id="lower-right-highlights-container"
                 class="lower-containers"
               >
-                <div id="sunrise-box" class="highlights-boxes">
-                  <img id="sunrise-logo" class="sun-logos" src="Icons/Sunrise Icon.png">
+                <div id="sunrise-box" class="highlights-boxes sun-box">
+                  <img id="sunrise-logo" class="sun-logos" src="Icons/sunrise-icon.png">
                   <div class="sun-details" id="sunrise-details">
                     <span id="sunrise-title" class="sun-details-titles"
                       >Sunrise</span
@@ -221,8 +229,8 @@
                     >
                   </div>
                 </div>
-                <div id="sunset-box" class="highlights-boxes">
-                  <img id="sunset-logo" class="sun-logos" >
+                <div id="sunset-box" class="highlights-boxes sun-box">
+                  <img id="sunset-logo" class="sun-logos" src="Icons/sunset-icon.png">
                   <div class="sun-details" id="sunset-details">
                     <span id="sunset-title" class="sun-details-titles"
                       >Sunrise</span
@@ -238,13 +246,25 @@
           <div id="forecast-container" class="containers">
             <div class="upper-bar" id="forecast-upper-bar">
               <span id="forecast-title" class="bar-title">10 Day Forecast</span>
-              <select>
-                <!-- Create Custom Dropdown-->
-                <option>Option 1</option>
-                <option>Option 2</option>
-              </select>
+              <div class="time-dropdown">
+                <button class="time-dropdown-btn">Duration <i class="fa-solid fa-caret-down" id="dropdown-icon"></i></button>
+                <div class="time-dropdown-content">
+                  <div class="time-dropdown-item" id="hours-widget" data-value="h">
+                    <span class="time-dropdown-item-text" id="hours-text">Hours</span>
+                  </div>
+                  <div class="time-dropdown-item" id="days-widget" data-value="d">
+                    <span class="time-dropdown-item-text" id="days-text">Days</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="lower-forecast-details-container"></div>
+            <div class="lower-forecast-details-container">
+              <div class="forecast-widgets">
+                <span class="forecast-date">Today</span>
+                <img class="forecast-icon" src="Icons/DayIcons/Freezing drizzle.png">
+                <span class="forecast-temp">28&deg;C</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
