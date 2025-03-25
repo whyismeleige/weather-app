@@ -279,6 +279,7 @@ body {
 .current-location-lower-grid-box {
   display: flex;
   padding: 0px 15px;
+  justify-content: space-between;
 }
 
 /* Time Details Box*/
@@ -482,3 +483,187 @@ body {
   font-weight: 400;
 }
 
+/* Sun Box */
+.sun-box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.sun-logos{
+  width: 115px;
+  margin: 0px 100px 0px 0px;
+}
+
+.sun-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sun-details-titles{
+  font-size: large;
+  font-weight: 300;
+}
+
+.sun-details-time{
+  font-size: xx-large;
+  font-weight: 500;
+}
+
+/* Other Cities Box */
+.lower-container{
+  overflow-y: scroll;
+  scrollbar-width: none;
+  height: 43vh;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+/* Other Cities Elements */
+.cities-widgets{
+  background-color: #272626;
+  border-radius: 15px;
+  margin: 0px 15px 15px 15px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cities-details{
+  display: flex;
+  flex-direction: column;
+}
+
+.country-name{
+  font-size: small;
+  font-weight: 200;
+}
+
+.city-name{
+  font-size: xx-large;
+  font-weight: 500;
+}
+
+.weather-detail{
+  font-size: medium;
+  font-weight: 400;
+}
+
+.city-atmosphere{
+  width: 5vw;
+  animation: toggle__animation 3s infinite;
+}
+
+.city-temperature{
+  display: flex;
+  padding: 10px;
+  align-items: baseline;
+}
+
+.city-current-temperature-detail{
+  font-size: xx-large;
+  font-weight: 500;
+}
+
+.city-min-temperature-detail{
+  font-size: x-large;
+  font-weight: 300;
+}
+
+/* Time Dropdown */
+.time-dropdown-btn {
+  width: fit-content;
+  padding: 10px 15px 10px 10px;
+  border: 0;
+  border-radius: 15px;
+  background-color: transparent;
+  outline: none;
+  color: white;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: pointer;
+  z-index: 0;
+  text-align: center;
+  font-size: large;
+  font-weight: 500;
+}
+
+.time-dropdown-content {
+  display: none;
+  position: absolute;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  height: 30vh;
+}
+
+.time-dropdown-item {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  padding: 2px;
+  border-radius: 10px;
+  margin: 2px 0px 2px 0px;
+}
+
+.time-dropdown-item-flag {
+  margin: 0px 2px 0px 5px;
+}
+
+.time-dropdown-item-text {
+  font-size: larger;
+  margin: 5px;
+}
+
+.time-dropdown-item:hover {
+  background-color: black;
+  color: white;
+}
+
+.time-dropdown:hover .time-dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.time-dropdown:hover #dropdown-icon {
+  rotate: 180deg;
+}
+
+/*Forecast Widgets*/
+.lower-forecast-details-container{
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 38vw;
+  height: 200px; /* Adjust height as needed */
+  padding: 10px;
+  scrollbar-width: none;
+}
+.forecast-widgets{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #272626;
+  border-radius: 15px;
+  margin: 0px 15px 0px 0px;
+  padding: 10px;
+  width: 100px;
+  height: 170px;
+  flex-shrink: 0; /* Prevents shrinking */
+}
+
+.forecast-date{
+  font-size: large;
+}
+
+.forecast-icon{
+  width: 6vw;
+  animation: toggle__animation 3s infinite;
+}
+
+.forecast-temp{
+  font-size: x-large;
+  font-weight: 600;
+}
