@@ -390,6 +390,7 @@ body {
   overflow-y: scroll;
   scrollbar-width: none;
   height: 30vh;
+  z-index: 1;
 }
 
 .country-dropdown-item {
@@ -595,6 +596,7 @@ body {
   overflow-y: scroll;
   scrollbar-width: none;
   height: 30vh;
+  z-index: 1;
 }
 
 .time-dropdown-item {

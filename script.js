@@ -6,7 +6,14 @@ const CountryAPIKEY = "eFZSMDhRY2RXUFk1Z3d2TkRGZjdjdklFelRMNmJqYWt1Z2NkQ29VSw=="
 let weatherData;
 let citiesData;
 let country;
+let counter = 0;
 let FORECAST = "d";
+let codesData;
+
+const getCodesData = async () => {
+  let response = await fetch(`https://www.weatherapi.com/docs/weather_conditions.json`);
+  codesData = await response.json();
+}
 
 //NavBar Elements
 const navbarDiv = document.querySelector(".search-bar-group");
@@ -63,6 +70,7 @@ window.addEventListener("load", () => {
 
   // Clock and Fetching
   clock();
+  getCodesData();
   fetchCurrentWeather("auto:ip","14");
   function clock() {
     const today = new Date();
@@ -203,10 +211,7 @@ const currentTempChanges = () => {
 // Icon Changes in Current Weather
 const iconChange = async (conditionCode, isDay,element) => {
   let url;
-  let response = await fetch(`https://www.weatherapi.com/docs/weather_conditions.json`);
-  let conditionData = await response.json();
-  
-  conditionData.forEach(condition => {
+  codesData.forEach(condition => {
     if(conditionCode === condition.code){
       isDay === 1 ? url=`Icons/DayIcons/${condition.day}.png` : url=`Icons/NightIcons/${condition.night}.png`;
     }
@@ -258,6 +263,7 @@ const changeHighlights = () => {
 
 //Getting Cities Data
 const getCitiesData = async (countryCode) => {
+  document.querySelector(".lower-container").replaceChildren();
   try{
     let headers = new Headers();
     headers.append("X-CSCAPI-KEY",CountryAPIKEY);
@@ -278,18 +284,16 @@ const getCitiesData = async (countryCode) => {
     console.log(`City Data Received for Country Code: ${countryCode}`);
 
     fetchEachCityData();
-
   }catch(error){
     console.log(`Error in Fetching City Data for ${countryCode}`,error);
   }
 }
 
 //Fetching Each City Data
-const fetchEachCityData = () => {
-  document.querySelector(".lower-container").replaceChildren();
+const fetchEachCityData = async () => {
   document.querySelector("#other-cities-title").innerText = `Other Cities in ${country}`;
-  citiesData.forEach( async (city) => {
-    let cityName = city.name;
+  for(let i=counter;i<citiesData.length && i<=counter+10;i++){
+    let cityName = citiesData[i].name;
     let URL = `${BASEURL}forecast.json?${WeatherAPIKEY}&q=${cityName}&aqi=yes`;
     try{
       let response = await fetch(URL);
@@ -302,7 +306,7 @@ const fetchEachCityData = () => {
     }catch(error){
       console.error(error);
     }
-  });
+  }
 }
 
 //Adding Each City to The Div
@@ -408,3 +412,13 @@ const changeForecast = () => {
   }
 }
 
+//Testing 
+const scrollableDiv = document.querySelector(".lower-container");
+
+scrollableDiv.addEventListener("scroll",() => {
+  if(scrollableDiv.scrollTop + scrollableDiv.clientHeight >= scrollableDiv.scrollHeight){
+    console.log("Reached the bottom! Fetch more Data");
+    counter+= 10;
+    fetchEachCityData();
+  }
+});
